@@ -1,20 +1,23 @@
 import { Inter, Roboto } from 'next/font/google';
-import Navbar from './navbar';
-import { useAuth } from '@/contexts/auth';
 import { GetServerSideProps } from 'next';
 import { parseCookies } from 'nookies';
-import { getApiClient } from '@/services/api-utils';
-const roboto = Roboto({ weight: "400", subsets: ['latin'] });
+import dynamic from 'next/dynamic';
+
+
+const DinamycNavbar: any = dynamic(() => import('@/components/navbar'), {
+    ssr: false,
+    loading: () => <p>Loading...</p>
+});
 
 function Dashboard() {
     return (
         <>
-            <Navbar />
-            <main style={{ paddingLeft: '280px' }}>
+            <DinamycNavbar />
+            <main className="container-fluid">
                 <h1>Main</h1>
             </main>
         </>
-    )
+    );
 }
 
 

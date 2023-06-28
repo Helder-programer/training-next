@@ -1,0 +1,47 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap';
+
+* {
+    box-sizing: border-box !important;
+    font-family: 'Poppins';
+}
+
+//Variables for Styled Components
+:root {
+    --custom-blue: #2C2966;
+    --custom-dark-blue: #141229;
+    --custom-light-blue: #6C6C94;
+    --custom-orange: #FFA051;
+    --custom-white: #EEE;
+}
+
+$custom-blue: #2C2966;
+$custom-dark-blue: #131047;
+$custom-light-blue: #6C6C94;
+$custom-orange: #FFA051;
+$custom-white: #EEE;
+
+$custom-colors: (
+    "custom-blue": $custom-blue,
+    "custom-dark-blue": $custom-dark-blue,
+    "custom-light-blue": $custom-light-blue,
+    "custom-orange": $custom-orange,
+    "custom-white": $custom-white
+);
+
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+
+#__next {
+    height: 100vh;
+    display: flex;
+}

@@ -2,12 +2,15 @@ import { GetServerSideProps } from "next";
 import { parseCookies } from "nookies";
 
 import LoginForm from "@/components/login-form";
-import Router from "next/router";
 
 function LoginPage() {
     return (
-        <main className="flex justify-center items-center h-screen w-screen">
-            <LoginForm />
+        <main className="d-flex container-fluid vh-100 vw-100 justify-content-center align-items-center">
+            <div style={{ width: '20rem' }}>
+                <h2 className="text-center mb-2 fw-bold">Service Max</h2>
+                <h5 className="text-center mb-2 fw-semi-bold">Make Your Login</h5>
+                <LoginForm />
+            </div>
         </main>
     );
 }
